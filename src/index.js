@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-
-import Class1 from './component/class1';
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import "./index";
+import Calculator from "./Components/Calculator";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Class1 />
+    <Calculator />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
