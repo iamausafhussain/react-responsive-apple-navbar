@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index";
-import Calculator from "./Components/Calculator";
+import CalculatorTwo from "./Components/Assignments/AssignmentTwo/CalculatorTwo";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calculator />
+    <CalculatorTwo />
   </React.StrictMode>,
   document.getElementById("root")
 );
