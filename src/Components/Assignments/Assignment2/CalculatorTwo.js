@@ -10,7 +10,7 @@ function CalculatorTwo() {
     <div className="calculator">
       <h2>Basic Calculator 🚀</h2>
       <p>Assignment-2 </p>
-      <p>Passing param between two Components. </p>
+      <p> ( Passing param between two Components. ) </p>
 
       {/* Creating Input Fields */}
 
