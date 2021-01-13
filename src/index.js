@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index";
 import Lists from "./Components/Assignments/Assignment3/Lists";
+// import SumAverage from "./Components/Assignments/Assignment3/SumAverage";
 
 ReactDOM.render(
   <React.StrictMode>

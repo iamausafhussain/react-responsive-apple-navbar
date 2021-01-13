@@ -44,10 +44,10 @@ class Lists extends Component {
     var temp = this.state.array;
 
     var index = temp.indexOf(e.target.value);
-    temp.splice(index, 1);
+    var tempOne = temp.splice(index, 1);
 
     this.setState({
-      array: temp,
+      array: tempOne,
     });
   };
 
