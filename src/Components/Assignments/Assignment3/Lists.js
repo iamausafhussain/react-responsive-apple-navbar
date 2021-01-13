@@ -40,14 +40,11 @@ class Lists extends Component {
     }
   };
 
-  handleRemove = (e) => {
+  handleRemove = (index) => {
     var temp = this.state.array;
-
-    var index = temp.indexOf(e.target.value);
-    var tempOne = temp.splice(index, 1);
-
+    temp.splice(index, 1);
     this.setState({
-      array: tempOne,
+      array: temp,
     });
   };
 
@@ -57,14 +54,16 @@ class Lists extends Component {
         <div className="container__app">
           <h4>Lists</h4>
           <p className="container__appPara">
-            {this.state.array.map((obj) => {
+            {this.state.array.map((obj, index) => {
               return (
                 <div className="container__appParaArray">
                   <div className="container__appParaElement">
                     {obj.name} - {obj.skill}
                   </div>
                   <button
-                    onClick={this.handleRemove}
+                    onClick={(e) => {
+                      this.handleRemove(index);
+                    }}
                     className="container__appParaArrayButton"
                   >
                     Remove
