@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index";
-import Lists from "./Components/Assignments/Assignment3/Lists";
-// import SumAverage from "./Components/Assignments/Assignment3/SumAverage";
+import LoginPage from "./Components/Assignments/Assignment4/LoginPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Lists />
+    <LoginPage />
   </React.StrictMode>,
   document.getElementById("root")
 );
