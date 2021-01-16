@@ -7,12 +7,12 @@ class LoginPage extends Component {
     super(props);
 
     this.state = {
-      name: "by Default Games",
-      name1: "Assasins Creed",
+      name: "by Default set to Games",
+      name1: "Assassins Creed",
       name2: "Valorant",
       name3: "The Forest",
       name4: "Imposter",
-      mount: true,
+      mount: false,
     };
   }
 
@@ -42,7 +42,7 @@ class LoginPage extends Component {
         <main>
           <section className="glass">
             <div className="dashboard">
-              <label for="cars">Choose a Game:</label>
+              <label for="cars">🚀Choose a Game:</label>
 
               <select
                 defaultValue={this.state.name}
@@ -58,7 +58,7 @@ class LoginPage extends Component {
             <div className="games">
               <div className="status">
                 <h1>Active Games</h1>
-                <input placeholder="Search Games" type="text" />
+                <input placeholder="Search Games " type="text" />
               </div>
               <div className="cards">
                 <div className="card">
@@ -81,7 +81,7 @@ class LoginPage extends Component {
                     👉componentDidMount() <br />
                     👉componentDidUpdate() and <br />
                     👉componentWillUnmount()
-                    <br /> logged as they are called
+                    <br /> logged as they are called respectively.
                   </p>
                 </div>
               </div>
