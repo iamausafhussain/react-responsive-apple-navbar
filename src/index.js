@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index";
-import LoginPage from "./Components/Assignments/Assignment4/LoginPage";
+import FetchAPI from "./Components/Assignments/Assignment6/FetchAPI";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
+    <FetchAPI />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -25,7 +25,7 @@ class Lists extends Component {
   };
 
   handleAdd = () => {
-    if (this.state.userName != "") {
+    if (this.state.userName != "" && this.state.userSkill != "") {
       var tempName = this.state.userName;
       var tempSkill = this.state.userSkill;
       this.state.key = Math.random();
