@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index";
-import FetchAPI from "./Components/Assignments/Assignment6/FetchAPI";
+// import Login from "./Components/Assignments/Assignment7/Login";
+import ListUser from "./Components/Assignments/Assignment8/ListUser";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FetchAPI />
+    <ListUser />
   </React.StrictMode>,
   document.getElementById("root")
 );
