@@ -173,11 +173,12 @@ function ListUser() {
             {users.map((user) => {
               return (
                 <ListItem key={user.id}>
-                  <p>
-                    <ListItemText>{user.first_name}</ListItemText>
-                  </p>
-                  <ListItemText>{user.email}</ListItemText>
                   <Avatar key={user.avatar} src={user.avatar}></Avatar>
+                  <ListItemText
+                    style={{ margin: "15px" }}
+                    primary={user.first_name}
+                    secondary={user.email}
+                  />
                 </ListItem>
               );
             })}
