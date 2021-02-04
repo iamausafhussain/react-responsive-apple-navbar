@@ -129,7 +129,6 @@ function ListUser() {
                 style={{ margin: "20px" }}
                 label="Job Description"
                 variant="outlined"
-                type="password"
                 value={password}
                 onChange={handlePassword}
               />
