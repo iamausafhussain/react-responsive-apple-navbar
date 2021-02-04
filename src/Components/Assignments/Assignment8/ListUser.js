@@ -49,7 +49,7 @@ function ListUser() {
     setPassword(e.target.value);
   };
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     setEmail("");
     setPassword("");
     clearTimeout(timerRef.current);
@@ -62,12 +62,8 @@ function ListUser() {
     setQuery("progress");
     timerRef.current = window.setTimeout(() => {
       setQuery("success");
-      // setQuery("idle");
+      window.location.reload();
     }, 2000);
-  };
-
-  const handleMount = () => {
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -75,9 +71,12 @@ function ListUser() {
       .then((res) => res.json())
       .then((resJSON) => {
         setUsers(resJSON.data);
-        console.log(resJSON);
       });
   });
+
+  // const handleMount = () => {
+  //   window.location.reload();
+  // };
 
   return (
     <>
@@ -94,8 +93,9 @@ function ListUser() {
           <Typography variant="h6" className={classes.title}>
             Login From Component
           </Typography>
-          <Button variant="contained" color="secondary">
-            Try it
+
+          <Button onClick={handleClick} variant="contained" color="secondary">
+            {query !== "idle" ? "Reset" : "Mount"}
           </Button>
         </Toolbar>
       </AppBar>
@@ -140,7 +140,7 @@ function ListUser() {
                 disabled={email && password ? false : true}
                 onClick={handleClick}
               >
-                Add User
+                Sign in
               </Button>
             </Grid>
           </CardContent>
@@ -160,15 +160,6 @@ function ListUser() {
               )}
             </div>
           </CardActions>
-          <Button
-            style={{ marginLeft: "120px", width: "40%" }}
-            variant="contained"
-            color="secondary"
-            disabled={email && password ? false : true}
-            onClick={handleMount}
-          >
-            RESET
-          </Button>
         </Card>
         <Card
           style={{
