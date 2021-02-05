@@ -11,17 +11,12 @@ import {
   Button,
   Grid,
   Snackbar,
-  ListItem,
-  ListItemAvatar,
-  Avatar,
-  ListItemText,
 } from "@material-ui/core/";
 import SentimentSatisfiedRoundedIcon from "@material-ui/icons/SentimentSatisfiedRounded";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ImageIcon from "@material-ui/icons/Image";
 
 //  Custom Styling
 
@@ -77,7 +72,7 @@ export default function Login() {
       .then((res) => res.json())
       .then((resJSON) => {
         if (resJSON.id) {
-          setMessage("User Created");
+          setMessage("User Created 🚀🔥");
         } else {
           setMessage("Unable to create a User!!");
         }
@@ -101,7 +96,7 @@ export default function Login() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Login using REST API calls"
+        title="Login using REST API calls 🚀"
         subheader="February 4, 2021"
       />
       <Grid
