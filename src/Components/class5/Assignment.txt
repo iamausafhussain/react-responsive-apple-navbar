@@ -1,4 +1,0 @@
--> colr.c // http://www.colr.org/json/color/random
--> get req
--> make a button
--> change the background using the 'new_color'

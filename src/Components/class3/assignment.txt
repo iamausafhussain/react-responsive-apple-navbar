@@ -1,6 +1,0 @@
--> Create a dropdown
--> Use componentDidUpdate();
--> Pass value from one Component to another
-    and show the associated value
--> if(current value = props value) then change
--> 
