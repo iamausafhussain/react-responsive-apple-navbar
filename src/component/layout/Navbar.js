@@ -1,62 +1,56 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
   // Desktop Navigation
-  const desktopNav = document.querySelector(".desktop-nav");
-  const searchContainer = document.querySelector(".search-container");
-  const overlay = document.querySelector(".overlay");
+  const desktopNavElement = useRef(null);
+  const searchContainerElement = useRef(null);
+  const overlayElement = useRef(null);
 
   const addSearch = () => {
-    desktopNav.classList.add("hide");
-    searchContainer.classList.remove("hide");
-    overlay.classList.add("show");
+    desktopNavElement.current.classList.add("hide");
+    searchContainerElement.current.classList.remove("hide");
+    overlayElement.current.classList.add("show");
   };
 
   const addClose = () => {
-    desktopNav.classList.remove("hide");
-    searchContainer.classList.add("hide");
-    overlay.classList.remove("show");
+    desktopNavElement.current.classList.remove("hide");
+    searchContainerElement.current.classList.add("hide");
+    overlayElement.current.classList.remove("show");
   };
 
   const addOverlay = () => {
-    desktopNav.classList.remove("hide");
-    searchContainer.classList.add("hide");
-    overlay.classList.remove("show");
+    desktopNavElement.current.classList.remove("hide");
+    searchContainerElement.current.classList.add("hide");
+    overlayElement.current.classList.remove("show");
   };
 
   // Mobile Navigation
-  const menuIconContainer = document.querySelector(".menu-icon-container");
-  const navContainer = document.querySelector(".nav-container");
-  const searchBar = document.querySelector(
-    ".mobile-search-container .search-bar"
-  );
-  const nav = document.querySelector(".nav-container nav");
-  const searchInput = document.querySelector(".mobile-search-container input");
-  const cancelBtn = document.querySelector(
-    ".mobile-search-container .cancel-btn"
-  );
+
+  const navContainerElement = useRef(null);
+  const searchBarElement = useRef(null);
+  const navElement = useRef(null);
 
   const addMobMenu = () => {
-    navContainer.classList.toggle("active");
+    navContainerElement.current.classList.toggle("active");
   };
 
   const addMobSearch = () => {
-    searchBar.classList.add("active");
-    nav.classList.add("move-up");
-    desktopNav.classList.add("move-down");
+    searchBarElement.current.classList.add("active");
+    navElement.current.classList.add("move-up");
+    desktopNavElement.current.classList.add("move-down");
   };
 
   const addMobCancel = () => {
-    searchBar.classList.remove("active");
-    nav.classList.remove("move-up");
-    desktopNav.classList.remove("move-down");
+    searchBarElement.current.classList.remove("active");
+    navElement.current.classList.remove("move-up");
+    desktopNavElement.current.classList.remove("move-down");
   };
 
   return (
     <>
-      <div className="nav-container">
-        <nav>
+      <div className="nav-container" ref={navContainerElement}>
+        <nav ref={navElement}>
           <ul className="mobile-nav">
             <li>
               <div className="menu-icon-container" onClick={() => addMobMenu()}>
@@ -76,7 +70,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <ul className="desktop-nav">
+          <ul className="desktop-nav" ref={desktopNavElement}>
             <li>
               <a href="#" className="link-logo"></a>
             </li>
@@ -114,9 +108,9 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className="search-container hide">
+        <div className="search-container hide" ref={searchContainerElement}>
           <div className="link-search" onClick={() => addSearch()}></div>
-          <div className="search-bar">
+          <div className="search-bar" ref={searchBarElement}>
             <form action="">
               <input type="text" placeholder="Search apple.com" />
             </form>
@@ -145,9 +139,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="mobile-search-container">
+        <div className="mobile-search-container" ref={searchBarElement}>
           <div className="link-search" onClick={() => addSearch()}></div>
-          <div className="search-bar">
+          <div className="search-bar" ref={searchBarElement}>
             <form action="">
               <input
                 type="text"
@@ -183,7 +177,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="overlay" onClick={() => addOverlay()}></div>
+      <div
+        className="overlay"
+        ref={overlayElement}
+        onClick={() => addOverlay()}
+      ></div>
     </>
   );
 };
